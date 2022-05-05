@@ -16,53 +16,17 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     async function sendShare() {
-      const result = await liff.shareTargetPicker([
-        {
-          "type": "flex",
-          "altText": "Flex Message",
-          "contents": {
-  "type": "bubble",
-  "direction": "ltr",
-  "hero": {
-    "type": "image",
-    "url": "https://dl.dropbox.com/s/gnd14y34cheeuir/3.jpg?dl=0",
-    "size": "full",
-    "aspectMode": "cover"
+      cconst result = await liff.shareTargetPicker([
+  {
+    "type": "text",
+    "text": "Hello World!"
   },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "สร้างรายได้ผ่านแพลตฟอร์ม iTS",
-        "weight": "bold",
-        "align": "center",
-        "contents": []
-      }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "position": "default",
-    "contents": [
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "Shere",
-          "uri": "https://liff.line.me/1657064266-ER90aVGM"
-        },
-        "color": "#32BE16FF",
-        "style": "primary",
-        "gravity": "center"
-      }
-    ]
-    }
-}
-        }
-      ])
+  {
+    "type": "text",
+    "text": "Messages from Share Target Picker"
+  }
+])
+
       if (result) {
         alert(`[${result.status}] Message sent!`)
       } else {
